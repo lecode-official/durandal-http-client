@@ -1,0 +1,9 @@
+
+{
+    "version": "0.1.0",
+    "command": "${workspaceRoot}/node_modules/.bin/gulp",
+    "isWatching": true,
+    "isShellCommand": true,
+    "args": [],
+    "showOutput": "always"
+}
