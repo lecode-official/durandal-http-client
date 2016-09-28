@@ -12,8 +12,7 @@ var typescript = require("gulp-typescript");
 var paths = {
     sourceFiles: "./src/**/*.ts",
     buildPath: "./build",
-    typeScriptConfigurationFile: "./tsconfig.json",
-    bowerPath: "./bower_components"
+    typeScriptConfigurationFile: "./tsconfig.json"
 };
 
 // Defines the default gulp task, which is execute when "gulp" is executed on the command line, it executes all other tasks needed to build the project
