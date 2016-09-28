@@ -1,0 +1,33 @@
+{
+  "name": "typescript-http-client",
+  "displayName": "TypeScript HTTP Client",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A simple HTTP client for calling RESTful APIs written in TypeScript.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lecode-official/typescript-http-client.git"
+  },
+  "keywords": [
+    "HTTP",
+    "Client",
+    "API",
+    "REST",
+    "RESTful",
+    "jQuery",
+    "TypeScript"
+  ],
+  "author": "David Neumann & Lukas Rögner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lecode-official/typescript-http-client/issues"
+  },
+  "homepage": "https://github.com/lecode-official/typescript-http-client#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-typescript": "^3.0.1",
+    "typescript": "^2.0.3"
+  }
+}
