@@ -1,0 +1,6 @@
+
+# Ignores the installed bower components
+bower_components
+
+# Ignores the installed node modules
+node_modules
