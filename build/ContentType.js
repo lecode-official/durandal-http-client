@@ -13,6 +13,10 @@ define(["require", "exports"], function (require, exports) {
          * The content type "application/x-www-form-urlencoded" is used to encode the data that is send with the request.
          */
         ContentType[ContentType["UrlFormEncoded"] = 1] = "UrlFormEncoded";
+        /**
+         * The content type "application/octet-stream" is used for the data that is send with the request.
+         */
+        ContentType[ContentType["Blob"] = 2] = "Blob";
     })(ContentType || (ContentType = {}));
     return ContentType;
 });
