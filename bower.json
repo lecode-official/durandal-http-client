@@ -1,0 +1,28 @@
+{
+  "name": "typescript-http-client",
+  "homepage": "https://github.com/lecode-official/typescript-http-client",
+  "authors": [
+    "David Neumann <david.neumann@live.com>",
+    "Lukas Rögner <lukas.roegner@icloud.com>"
+  ],
+  "description": "A simple HTTP client for calling RESTful APIs written in TypeScript.",
+  "main": "HttpClient.ts",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "HTTP",
+    "Client",
+    "API",
+    "REST",
+    "RESTful",
+    "jQuery",
+    "TypeScript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
