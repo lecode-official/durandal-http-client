@@ -2,6 +2,7 @@
 // #region Import Directives
 
 var gulp = require("gulp");
+var bower = require("gulp-bower");
 var clean = require("gulp-clean");
 var typescript = require("gulp-typescript");
 
@@ -28,8 +29,13 @@ gulp.task("clean", function() {
         .pipe(clean());
 });
 
+// Defines a gulp task, which installs all bower components
+gulp.task("bower", function() {
+    return bower();
+});
+
 // Defines a gulp task, which builds the project
-gulp.task("build", ["clean"], function() {
+gulp.task("build", ["clean", "bower"], function() {
     return gulp
         .src(paths.sourceFiles)
         .pipe(typescript.createProject(paths.typeScriptConfigurationFile)())
