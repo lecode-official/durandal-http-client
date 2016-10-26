@@ -4,6 +4,7 @@
 var gulp = require("gulp");
 var bower = require("gulp-bower");
 var clean = require("gulp-clean");
+var runSequence = require("run-sequence");
 var typescript = require("gulp-typescript");
 
 // #endregion
@@ -21,11 +22,17 @@ gulp.task("default", [
     "watch"
 ]);
 
-// Defines a gulp task, which cleans the build directory
-gulp.task("clean", function() {
-    return gulp
-        .src(paths.buildPath, { read: false })
-        .pipe(clean());
+// Defines a gulp task, which continously watches the source files and rebuilds the project if anything has changed
+gulp.task("watch", function() {
+    gulp.watch(paths.sourceFiles, ["build:typescript"]);
+});
+
+// Defines a gulp task, which builds the project
+gulp.task("build", function(callback) {
+    runSequence(
+        ["bower", "clean"],
+        ["build:typescript"],
+        callback);
 });
 
 // Defines a gulp task, which installs all bower components
@@ -33,15 +40,17 @@ gulp.task("bower", function() {
     return bower();
 });
 
-// Defines a gulp task, which builds the project
-gulp.task("build", ["clean", "bower"], function() {
+// Defines a gulp task, which cleans the build directory
+gulp.task("clean", function() {
+    return gulp
+        .src(paths.buildPath, { read: false })
+        .pipe(clean());
+});
+
+// Defins a gulp task, which compiles the TypeScript files
+gulp.task("build:typescript", function() {
     return gulp
         .src(paths.sourceFiles)
         .pipe(typescript.createProject(paths.typeScriptConfigurationFile)())
         .pipe(gulp.dest(paths.buildPath));
-});
-
-// Defines a gulp task, which continously watches the source files and rebuilds the project if anything has changed
-gulp.task("watch", function() {
-    gulp.watch(paths.sourceFiles, ["build"]);
-});
+})
