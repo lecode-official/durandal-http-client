@@ -11,6 +11,7 @@
     "removeComments": false,
     "sourceMap": true,
     "target": "es5",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src"
   }
 }

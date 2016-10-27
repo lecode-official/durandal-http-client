@@ -1,4 +1,5 @@
-define(["require", "exports"], function (require, exports) {
+///<amd-module name='TypeScriptHttpClient/ContentType'/>
+define("TypeScriptHttpClient/ContentType", ["require", "exports"], function (require, exports) {
     "use strict";
     /**
      * Represents an enumeration with the content types that are supported by the HTTP client.
