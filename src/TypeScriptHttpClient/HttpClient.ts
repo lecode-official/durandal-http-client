@@ -3,7 +3,7 @@
 
 // #region Import Directives
 
-/// <reference path="../../bower_components/DefinitelyTyped/jquery/jquery.d.ts" />
+/// <reference path="../Typings/References.d.ts" />
 
 import ContentType = require("TypeScriptHttpClient/ContentType");
 import HttpResponse = require("TypeScriptHttpClient/HttpResponse");
