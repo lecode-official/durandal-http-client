@@ -1,4 +1,5 @@
-define(["require", "exports"], function (require, exports) {
+///<amd-module name='TypeScriptHttpClient/HttpResponse'/>
+define("TypeScriptHttpClient/HttpResponse", ["require", "exports"], function (require, exports) {
     "use strict";
     /**
      * Represents a response from an HTTP client, that contains information about the status and the content.

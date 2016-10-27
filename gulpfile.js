@@ -2,6 +2,7 @@
 // #region Import Directives
 
 var gulp = require("gulp");
+var dts = require("dts-generator");
 var bower = require("gulp-bower");
 var clean = require("gulp-clean");
 var runSequence = require("run-sequence");
@@ -11,6 +12,8 @@ var typescript = require("gulp-typescript");
 
 // References important paths that are used throughout the build tasks
 var paths = {
+    basePath: "./",
+    sourcePath: "./src",
     sourceFiles: "./src/**/*.ts",
     buildPath: "./build",
     typeScriptConfigurationFile: "./tsconfig.json",
@@ -33,7 +36,7 @@ gulp.task("watch", function() {
 gulp.task("build", function(callback) {
     runSequence(
         ["bower", "clean"],
-        ["build:typescript"],
+        ["build:typescript", "build:typings"],
         callback);
 });
 
@@ -54,5 +57,14 @@ gulp.task("build:typescript", function() {
     return gulp
         .src(paths.sourceFiles)
         .pipe(typescript.createProject(paths.typeScriptConfigurationFile)())
+        .js
         .pipe(gulp.dest(paths.buildPath));
+})
+
+// Defins a gulp task, which compiles the TypeScript definition files
+gulp.task("build:typings", function() {
+    dts.default({
+        project: paths.basePath,
+        out: paths.buildPath + "/TypeScriptHttpClient.d.ts"
+    });
 })

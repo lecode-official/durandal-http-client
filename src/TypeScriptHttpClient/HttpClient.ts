@@ -1,10 +1,12 @@
 
+///<amd-module name='TypeScriptHttpClient/HttpClient'/>
+
 // #region Import Directives
 
-/// <reference path="../bower_components/DefinitelyTyped/jquery/jquery.d.ts" />
+/// <reference path="../../bower_components/DefinitelyTyped/jquery/jquery.d.ts" />
 
-import ContentType = require("ContentType");
-import HttpResponse = require("HttpResponse");
+import ContentType = require("TypeScriptHttpClient/ContentType");
+import HttpResponse = require("TypeScriptHttpClient/HttpResponse");
 import jquery = require("jquery");
 
 // #endregion
