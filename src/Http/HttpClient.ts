@@ -1,12 +1,12 @@
 
-///<amd-module name='TypeScriptHttpClient/HttpClient'/>
+///<amd-module name='Http/HttpClient'/>
 
 // #region Import Directives
 
 /// <reference path="../Typings/References.d.ts" />
 
-import ContentType = require("TypeScriptHttpClient/ContentType");
-import HttpResponse = require("TypeScriptHttpClient/HttpResponse");
+import ContentType = require("Http/ContentType");
+import HttpResponse = require("Http/HttpResponse");
 import jquery = require("jquery");
 
 // #endregion

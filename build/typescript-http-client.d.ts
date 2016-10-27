@@ -1,4 +1,4 @@
-declare module 'TypeScriptHttpClient/ContentType' {
+declare module 'Http/ContentType' {
 	 enum ContentType {
 	    /**
 	     * The content type "application/json" is used to encode the data that is send with the request.
@@ -18,10 +18,10 @@ declare module 'TypeScriptHttpClient/ContentType' {
 }
 
 /// <reference path="../../bower_components/DefinitelyTyped/jquery/jquery.d.ts" />
-declare module 'TypeScriptHttpClient/HttpClient' {
+declare module 'Http/HttpClient' {
 	/// <reference path="../Typings/References.d.ts" />
-	import ContentType = require("TypeScriptHttpClient/ContentType");
-	import HttpResponse = require("TypeScriptHttpClient/HttpResponse"); class HttpClient {
+	import ContentType = require("Http/ContentType");
+	import HttpResponse = require("Http/HttpResponse"); class HttpClient {
 	    /**
 	     * Initializes a new HttpClient instance.
 	     * @param {string | undefined} baseUri The base URI that is to be used. If no base URI is given, the default URI is used.
@@ -148,7 +148,7 @@ declare module 'TypeScriptHttpClient/HttpClient' {
 	export = HttpClient;
 
 }
-declare module 'TypeScriptHttpClient/HttpResponse' {
+declare module 'Http/HttpResponse' {
 	 class HttpResponse<T> {
 	    /**
 	     * Gets or sets the status code of the request.

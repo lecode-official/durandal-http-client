@@ -65,6 +65,6 @@ gulp.task("build:typescript", function() {
 gulp.task("build:typings", function() {
     dts.default({
         project: paths.basePath,
-        out: paths.buildPath + "/TypeScriptHttpClient.d.ts"
+        out: paths.buildPath + "/typescript-http-client.d.ts"
     });
 })
