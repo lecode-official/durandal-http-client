@@ -1,5 +1,5 @@
 
-///<amd-module name='TypeScriptHttpClient/ContentType'/>
+///<amd-module name='Http/ContentType'/>
 
 /**
  * Represents an enumeration with the content types that are supported by the HTTP client.

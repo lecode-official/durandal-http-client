@@ -1,5 +1,5 @@
-///<amd-module name='TypeScriptHttpClient/HttpClient'/>
-define("TypeScriptHttpClient/HttpClient", ["require", "exports", "TypeScriptHttpClient/ContentType", "TypeScriptHttpClient/HttpResponse", "jquery"], function (require, exports, ContentType, HttpResponse, jquery) {
+///<amd-module name='Http/HttpClient'/>
+define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpResponse", "jquery"], function (require, exports, ContentType, HttpResponse, jquery) {
     "use strict";
     // #endregion
     /**
