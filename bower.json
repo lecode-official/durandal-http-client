@@ -6,7 +6,7 @@
     "Lukas Rögner <lukas.roegner@icloud.com>"
   ],
   "description": "A simple HTTP client for calling RESTful APIs written in TypeScript.",
-  "main": "./build/HttpClient.js",
+  "main": "./build/TypeScriptHttpClient/HttpClient.js",
   "moduleType": [
     "amd"
   ],
