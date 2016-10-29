@@ -148,7 +148,7 @@ class HttpClient {
      * @param {{ [key: string]: any; } | undefined} parameters The parameters bag, which contains parameters that are included in the URI. The parameters are added to the path. If there are any remaining parameters that could not be added to the path, then they are added as query parameters.
      * @returns {string} Returns the generated URI.
      */
-    public generateUri(relativePath?: string, parameters?: { [key: string]: any; }): string {
+    public generateUri(relativePath?: string, parameters?: { [key: string]: any; }|null): string {
 
         // Validates the parameters
         relativePath = relativePath || "";
@@ -202,7 +202,7 @@ class HttpClient {
      * @param {ContentType | undefined} contentType The content type that is used to encode the information stored in the data parameter (if files are uploaded, then the actual content type will be overridden with "multipart/form-data").
      * @returns {JQueryPromise<HttpResponse<T>>} Returns a promise, that resolves with the result of the request.
      */
-    public request<T>(httpMethod: string, relativePath?: string, parameters?: { [key: string]: any; }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
+    public request<T>(httpMethod: string, relativePath?: string, parameters?: { [key: string]: any; }|null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
 
         // Builds the request URI
         var requestUri = this.generateUri(relativePath, parameters);
@@ -272,7 +272,7 @@ class HttpClient {
      * @param {{ [key: string]: any; } | undefined} parameters The parameters that are added to the path and the query string.
      * @returns {JQueryPromise<HttpResponse<T>>} Returns a promise, that resolves with the result of the request.
      */
-    public get<T>(relativePath: string, parameters?: { [key: string]: any; }): JQueryPromise<HttpResponse<T>> {
+    public get<T>(relativePath: string, parameters?: { [key: string]: any; }|null): JQueryPromise<HttpResponse<T>> {
         return this.request<T>("GET", relativePath, parameters);
     }
 
@@ -284,7 +284,7 @@ class HttpClient {
    * @param {ContentType | undefined} contentType The content type that is used to encode the information stored in the data parameter (if files are uploaded, then the actual content type will be overridden with "multipart/form-data").
    * @returns {JQueryPromise<HttpResponse<T>>} Returns a promise, that resolves with the result of the request.
    */
-    public put<T>(relativePath: string, parameters?: { [key: string]: any; }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
+    public put<T>(relativePath: string, parameters?: { [key: string]: any; }|null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
         return this.request<T>("PUT", relativePath, parameters, data, contentType);
     }
 
@@ -296,7 +296,7 @@ class HttpClient {
      * @param {ContentType | undefined} contentType The content type that is used to encode the information stored in the data parameter (if files are uploaded, then the actual content type will be overridden with "multipart/form-data").
      * @returns {JQueryPromise<HttpResponse<T>>} Returns a promise, that resolves with the result of the request.
      */
-    public post<T>(relativePath: string, parameters?: { [key: string]: any; }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
+    public post<T>(relativePath: string, parameters?: { [key: string]: any; }|null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
         return this.request<T>("POST", relativePath, parameters, data, contentType);
     }
 
@@ -308,7 +308,7 @@ class HttpClient {
      * @param {ContentType | undefined} contentType The content type that is used to encode the information stored in the data parameter (if files are uploaded, then the actual content type will be overridden with "multipart/form-data").
      * @returns {JQueryPromise<HttpResponse<T>>} Returns a promise, that resolves with the result of the request.
      */
-    public patch<T>(relativePath: string, parameters?: { [key: string]: any; }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
+    public patch<T>(relativePath: string, parameters?: { [key: string]: any; }|null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>> {
         return this.request<T>("PATCH", relativePath, parameters, data, contentType);
     }
 
@@ -319,7 +319,7 @@ class HttpClient {
      * @param {any} data The data that is being sent to the specified path.
      * @returns {JQueryPromise<HttpResponse<T>>} Returns a promise, that resolves with the result of the request.
      */
-    public delete<T>(relativePath: string, parameters?: { [key: string]: any; }, data?: any): JQueryPromise<HttpResponse<T>> {
+    public delete<T>(relativePath: string, parameters?: { [key: string]: any; }|null, data?: any): JQueryPromise<HttpResponse<T>> {
         return this.request<T>("DELETE", relativePath, parameters, data);
     }
 

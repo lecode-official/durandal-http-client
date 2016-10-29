@@ -79,7 +79,7 @@ declare module 'Http/HttpClient' {
 	     */
 	    generateUri(relativePath?: string, parameters?: {
 	        [key: string]: any;
-	    }): string;
+	    } | null): string;
 	    /**
 	     * Makes a request to a URL.
 	     * @param {string} httpMethod The HTTP method (e.g. GET or POST) that is to be used for the request.
@@ -91,7 +91,7 @@ declare module 'Http/HttpClient' {
 	     */
 	    request<T>(httpMethod: string, relativePath?: string, parameters?: {
 	        [key: string]: any;
-	    }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
+	    } | null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
 	    /**
 	     * Makes a request to the specified path using the GET verb.
 	     * @param {string} relativePath The relative path of the ressource that is being queried.
@@ -100,7 +100,7 @@ declare module 'Http/HttpClient' {
 	     */
 	    get<T>(relativePath: string, parameters?: {
 	        [key: string]: any;
-	    }): JQueryPromise<HttpResponse<T>>;
+	    } | null): JQueryPromise<HttpResponse<T>>;
 	    /**
 	   * Makes a request to the specified path using the PUT verb.
 	   * @param {string} relativePath The relative path of the resource to which the data is being put.
@@ -111,7 +111,7 @@ declare module 'Http/HttpClient' {
 	   */
 	    put<T>(relativePath: string, parameters?: {
 	        [key: string]: any;
-	    }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
+	    } | null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
 	    /**
 	     * Makes a request to the specified path using the POST verb.
 	     * @param {string} relativePath The relative path of the resource to which the data is being posted.
@@ -122,7 +122,7 @@ declare module 'Http/HttpClient' {
 	     */
 	    post<T>(relativePath: string, parameters?: {
 	        [key: string]: any;
-	    }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
+	    } | null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
 	    /**
 	     * Makes a request to the specified path using the PATCH verb.
 	     * @param {string} relativePath The relative path of the resource which is to be patched.
@@ -133,7 +133,7 @@ declare module 'Http/HttpClient' {
 	     */
 	    patch<T>(relativePath: string, parameters?: {
 	        [key: string]: any;
-	    }, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
+	    } | null, data?: any, contentType?: ContentType): JQueryPromise<HttpResponse<T>>;
 	    /**
 	     * Makes a request to the specified path using the DELETE verb.
 	     * @param {string} relativePath The relative path of the resource which is to be deleted.
@@ -143,7 +143,7 @@ declare module 'Http/HttpClient' {
 	     */
 	    delete<T>(relativePath: string, parameters?: {
 	        [key: string]: any;
-	    }, data?: any): JQueryPromise<HttpResponse<T>>;
+	    } | null, data?: any): JQueryPromise<HttpResponse<T>>;
 	}
 	export = HttpClient;
 
