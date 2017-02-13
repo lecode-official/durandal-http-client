@@ -28,7 +28,7 @@ class HttpClient {
         // Sets the base URI and the headers
         this.baseUri = baseUri || HttpClient.defaultBaseUri;
         this._headers = headers || HttpClient.defaultHeaders;
-        
+
         // Adds the accept header to the request, that specifies, that only JSON data is accepted in the response
         this.headers["Accept"] = "application/json";
 
@@ -84,7 +84,7 @@ class HttpClient {
     // #endregion
 
     // #region Private Methods
-    
+
     /**
      * Generates the MIME type string from the specified content type.
      * @param {ContentType} contentType The content type for which the MIME type string is to be generated.
@@ -123,7 +123,7 @@ class HttpClient {
         if (contentType === ContentType.Json) {
             return JSON.stringify(data);
         }
-        
+
         // Checks if the user wants to encode the data as "application/x-www-form-urlencoded", if so then the URL encoded parameter string is generated and returned
         if (contentType === ContentType.UrlFormEncoded) {
             return jquery.param(data);
@@ -232,13 +232,13 @@ class HttpClient {
 
         // Attaches the done and the failed event handlers that evaluate the information that comes back from the server and serve them to the promise that is returned to the user
         xhr.then(value => {
-            
+
             // Returns the created model
             var result = new HttpResponse<T>();
             result.statusCode = xhr.status;
             result.content = value;
             result.location = xhr.getResponseHeader("location");
-            
+
             // Triggers the done callback of the promise that is being returned to the user
             promise.resolve(result);
         }, reasons => {

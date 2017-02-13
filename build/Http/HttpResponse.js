@@ -6,6 +6,7 @@ define("Http/HttpResponse", ["require", "exports"], function (require, exports) 
      */
     var HttpResponse = (function () {
         function HttpResponse() {
+            // #region Public Properties
             /**
              * Gets or sets details about the error.
              */
@@ -14,6 +15,7 @@ define("Http/HttpResponse", ["require", "exports"], function (require, exports) 
              * Gets or sets the model state errors.
              */
             this.modelState = {};
+            // #endregion
         }
         return HttpResponse;
     }());
