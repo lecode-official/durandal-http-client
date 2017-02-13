@@ -251,17 +251,17 @@ define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpR
         HttpClient.prototype.delete = function (relativePath, parameters, data) {
             return this.request("DELETE", relativePath, parameters, data);
         };
-        // #endregion
-        // #region Public Static Properties
-        /**
-         * Gets or sets the default base URI that can be configured before any HTTP client instances are created.
-         */
-        HttpClient.defaultBaseUri = "";
-        /**
-         * Contains the default headers that can be configured before any HTTP client instances are created.
-         */
-        HttpClient._defaultHeaders = {};
         return HttpClient;
     }());
+    // #endregion
+    // #region Public Static Properties
+    /**
+     * Gets or sets the default base URI that can be configured before any HTTP client instances are created.
+     */
+    HttpClient.defaultBaseUri = "";
+    /**
+     * Contains the default headers that can be configured before any HTTP client instances are created.
+     */
+    HttpClient._defaultHeaders = {};
     return HttpClient;
 });

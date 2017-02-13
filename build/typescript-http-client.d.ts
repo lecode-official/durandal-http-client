@@ -17,7 +17,7 @@ declare module 'Http/ContentType' {
 
 }
 
-/// <reference path="../../bower_components/DefinitelyTyped/jquery/jquery.d.ts" />
+/// <reference path="../../bower_components/DefinitelyTyped/jquery/index.d.ts" />
 declare module 'Http/HttpClient' {
 	/// <reference path="../Typings/References.d.ts" />
 	import ContentType = require("Http/ContentType");
