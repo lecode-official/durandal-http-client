@@ -181,18 +181,12 @@ define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpR
                 var result = new HttpResponse();
                 result.statusCode = xhr.status;
                 result.statusText = xhr.statusText;
-                result.errorMessage = "";
-                if (xhr.responseJSON && xhr.responseJSON.errorMessage) {
-                    result.errorMessage = xhr.responseJSON.errorMessage;
-                }
-                else if (xhr.responseJSON && xhr.responseJSON.message) {
-                    result.errorMessage = xhr.responseJSON.message;
+                if (xhr.responseJSON) {
+                    result.content = xhr.responseJSON;
                 }
                 else if (xhr.responseText) {
-                    result.errorMessage = xhr.responseText;
+                    result.content = xhr.responseText;
                 }
-                result.errorDetails = xhr.responseJSON ? xhr.responseJSON.errorDetails : {};
-                result.modelState = xhr.responseJSON ? xhr.responseJSON.modelState : {};
                 // Triggers the failed callback of the promise that is being returned to the user
                 promise.reject(result);
             });

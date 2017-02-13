@@ -19,21 +19,6 @@ class HttpResponse<T> {
     public statusText: string | null;
 
     /**
-     * Gets or sets the error message, if an error occurred during the execution of the request.
-     */
-    public errorMessage: string | null;
-
-    /**
-     * Gets or sets details about the error.
-     */
-    public errorDetails: Array<string> = new Array<string>();
-
-    /**
-     * Gets or sets the model state errors.
-     */
-    public modelState: { [key: string]: Array<string>; } = {};
-
-    /**
      * Gets or sets the URL of the entity if a new entity was created.
      */
     public location: string | null;

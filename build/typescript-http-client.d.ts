@@ -159,20 +159,6 @@ declare module 'Http/HttpResponse' {
 	     */
 	    statusText: string | null;
 	    /**
-	     * Gets or sets the error message, if an error occurred during the execution of the request.
-	     */
-	    errorMessage: string | null;
-	    /**
-	     * Gets or sets details about the error.
-	     */
-	    errorDetails: Array<string>;
-	    /**
-	     * Gets or sets the model state errors.
-	     */
-	    modelState: {
-	        [key: string]: Array<string>;
-	    };
-	    /**
 	     * Gets or sets the URL of the entity if a new entity was created.
 	     */
 	    location: string | null;
