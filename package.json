@@ -2,7 +2,7 @@
   "name": "typescript-http-client",
   "displayName": "TypeScript HTTP Client",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A simple HTTP client for calling RESTful APIs written in TypeScript.",
   "repository": {
     "type": "git",
