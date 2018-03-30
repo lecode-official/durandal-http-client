@@ -1,5 +1,9 @@
 
 {
     "typescript.tsdk": "node_modules/typescript/lib/",
-    "vsicons.presets.angular": false
+    "cSpell.language": "en,de",
+    "cSpell.words": [
+        "Durandal",
+        "Rögner"
+    ]
 }

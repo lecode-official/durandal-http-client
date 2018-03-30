@@ -1,12 +1,11 @@
 {
-  "name": "typescript-http-client",
-  "displayName": "TypeScript HTTP Client",
-  "private": true,
-  "version": "0.2.0",
+  "name": "durandal-http-client",
+  "displayName": "Durandal HTTP Client",
+  "version": "0.2.1",
   "description": "A simple HTTP client for calling RESTful APIs written in TypeScript.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lecode-official/typescript-http-client.git"
+    "url": "git+https://github.com/lecode-official/durandal-http-client.git"
   },
   "keywords": [
     "HTTP",
@@ -20,17 +19,21 @@
   "author": "David Neumann & Lukas Rögner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lecode-official/typescript-http-client/issues"
+    "url": "https://github.com/lecode-official/durandal-http-client/issues"
   },
-  "homepage": "https://github.com/lecode-official/typescript-http-client#readme",
+  "homepage": "https://github.com/lecode-official/durandal-http-client#readme",
+  "dependencies": {
+    "jquery": "~3.1.1",
+    "@types/jquery": "3.3.1"
+  },
   "devDependencies": {
-    "bower": "^1.7.9",
     "dts-generator": "2.0.0",
     "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13",
     "gulp-clean": "^0.3.2",
     "gulp-typescript": "^3.0.1",
     "run-sequence": "1.2.2",
     "typescript": "^2.0.3"
-  }
+  },
+  "types": "./build/durandal-http-client.d.ts",
+  "typings": "./build/durandal-http-client.d.ts"
 }

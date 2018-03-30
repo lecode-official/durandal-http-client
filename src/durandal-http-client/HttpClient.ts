@@ -1,12 +1,10 @@
 
-///<amd-module name='Http/HttpClient'/>
+///<amd-module name='durandal-http-client/HttpClient'/>
 
 // #region Import Directives
 
-/// <reference path="../Typings/References.d.ts" />
-
-import ContentType = require("Http/ContentType");
-import HttpResponse = require("Http/HttpResponse");
+import ContentType = require("durandal-http-client/ContentType");
+import HttpResponse = require("durandal-http-client/HttpResponse");
 import jquery = require("jquery");
 
 // #endregion
@@ -216,6 +214,9 @@ class HttpClient {
         // Creates the promise, that is returned to the caller
         var promise: JQueryDeferred<HttpResponse<T>> = jquery.Deferred();
 
+        // Defines the XHR function
+        var xhrFunction: any = jquery.ajaxSettings.xhr;
+
         // Makes a call to the REST API in order to retrieve the requested resource
         var xhr = jquery.ajax(requestUri, {
             type: httpMethod,
@@ -224,7 +225,7 @@ class HttpClient {
             processData: false,
             headers: this.headers,
             xhr: () => {
-                var customXhr: JQueryXHR = jquery.ajaxSettings.xhr();
+                var customXhr: XMLHttpRequest = xhrFunction();
                 customXhr.onprogress = event => promise.notify(event.lengthComputable ? event.loaded / event.total : -1);
                 return customXhr;
             }

@@ -1,4 +1,4 @@
-declare module 'Http/ContentType' {
+declare module 'durandal-http-client/ContentType' {
 	 enum ContentType {
 	    /**
 	     * The content type "application/json" is used to encode the data that is send with the request.
@@ -16,12 +16,10 @@ declare module 'Http/ContentType' {
 	export = ContentType;
 
 }
-
-/// <reference path="../../bower_components/DefinitelyTyped/jquery/index.d.ts" />
-declare module 'Http/HttpClient' {
-	/// <reference path="../Typings/References.d.ts" />
-	import ContentType = require("Http/ContentType");
-	import HttpResponse = require("Http/HttpResponse"); class HttpClient {
+declare module 'durandal-http-client/HttpClient' {
+	/// <reference types="jquery" />
+	import ContentType = require("durandal-http-client/ContentType");
+	import HttpResponse = require("durandal-http-client/HttpResponse"); class HttpClient {
 	    /**
 	     * Initializes a new HttpClient instance.
 	     * @param {string | undefined} baseUri The base URI that is to be used. If no base URI is given, the default URI is used.
@@ -148,7 +146,7 @@ declare module 'Http/HttpClient' {
 	export = HttpClient;
 
 }
-declare module 'Http/HttpResponse' {
+declare module 'durandal-http-client/HttpResponse' {
 	 class HttpResponse<T> {
 	    /**
 	     * Gets or sets the status code of the request.

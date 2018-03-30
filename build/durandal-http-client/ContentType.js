@@ -1,5 +1,5 @@
-///<amd-module name='Http/ContentType'/>
-define("Http/ContentType", ["require", "exports"], function (require, exports) {
+///<amd-module name='durandal-http-client/ContentType'/>
+define("durandal-http-client/ContentType", ["require", "exports"], function (require, exports) {
     "use strict";
     /**
      * Represents an enumeration with the content types that are supported by the HTTP client.

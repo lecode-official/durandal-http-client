@@ -1,5 +1,5 @@
 
-///<amd-module name='Http/HttpResponse'/>
+///<amd-module name='durandal-http-client/HttpResponse'/>
 
 /**
  * Represents a response from an HTTP client, that contains information about the status and the content.
