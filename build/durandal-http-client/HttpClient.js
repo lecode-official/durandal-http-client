@@ -1,11 +1,11 @@
-///<amd-module name='Http/HttpClient'/>
-define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpResponse", "jquery"], function (require, exports, ContentType, HttpResponse, jquery) {
+///<amd-module name='durandal-http-client/HttpClient'/>
+define("durandal-http-client/HttpClient", ["require", "exports", "durandal-http-client/ContentType", "durandal-http-client/HttpResponse", "jquery"], function (require, exports, ContentType, HttpResponse, jquery) {
     "use strict";
     // #endregion
     /**
      * Represents a simpe HTTP client, which can be used to send HTTP requests via XHR to REST APIs.
      */
-    var HttpClient = (function () {
+    var HttpClient = /** @class */ (function () {
         // #region Constructors
         /**
          * Initializes a new HttpClient instance.
@@ -154,6 +154,8 @@ define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpR
             var requestData = this.generateRequestData(data, contentType);
             // Creates the promise, that is returned to the caller
             var promise = jquery.Deferred();
+            // Defines the XHR function
+            var xhrFunction = jquery.ajaxSettings.xhr;
             // Makes a call to the REST API in order to retrieve the requested resource
             var xhr = jquery.ajax(requestUri, {
                 type: httpMethod,
@@ -162,7 +164,7 @@ define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpR
                 processData: false,
                 headers: this.headers,
                 xhr: function () {
-                    var customXhr = jquery.ajaxSettings.xhr();
+                    var customXhr = xhrFunction();
                     customXhr.onprogress = function (event) { return promise.notify(event.lengthComputable ? event.loaded / event.total : -1); };
                     return customXhr;
                 }
@@ -245,17 +247,17 @@ define("Http/HttpClient", ["require", "exports", "Http/ContentType", "Http/HttpR
         HttpClient.prototype.delete = function (relativePath, parameters, data) {
             return this.request("DELETE", relativePath, parameters, data);
         };
+        // #endregion
+        // #region Public Static Properties
+        /**
+         * Gets or sets the default base URI that can be configured before any HTTP client instances are created.
+         */
+        HttpClient.defaultBaseUri = "";
+        /**
+         * Contains the default headers that can be configured before any HTTP client instances are created.
+         */
+        HttpClient._defaultHeaders = {};
         return HttpClient;
     }());
-    // #endregion
-    // #region Public Static Properties
-    /**
-     * Gets or sets the default base URI that can be configured before any HTTP client instances are created.
-     */
-    HttpClient.defaultBaseUri = "";
-    /**
-     * Contains the default headers that can be configured before any HTTP client instances are created.
-     */
-    HttpClient._defaultHeaders = {};
     return HttpClient;
 });

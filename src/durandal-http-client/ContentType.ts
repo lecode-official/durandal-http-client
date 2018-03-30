@@ -1,5 +1,5 @@
 
-///<amd-module name='Http/ContentType'/>
+///<amd-module name='durandal-http-client/ContentType'/>
 
 /**
  * Represents an enumeration with the content types that are supported by the HTTP client.
